@@ -1,0 +1,45 @@
+CREATE TABLE client (
+  id SERIAL PRIMARY KEY,
+  entite TEXT,
+  nom TEXT NOT NULL,
+  prenom TEXT NOT NULL,
+  genre BOOLEAN,
+  adresse TEXT NOT NULL
+);
+
+CREATE TABLE stb (
+  id SERIAL PRIMARY KEY,
+  titre TEXT NOT NULL,
+  version REAL,
+  date TEXT NOT NULL,
+  description TEXT NOT NULL,
+  id_client INTEGER REFERENCES client(id)
+);
+
+CREATE TABLE membre (
+  id SERIAL PRIMARY KEY,
+  nom TEXT NOT NULL,
+  prenom TEXT NOT NULL,
+  genre BOOLEAN
+);
+
+CREATE TABLE equipe (
+  id SERIAL PRIMARY KEY,
+  id_stb INTEGER REFERENCES stb(id),
+  id_membre INTEGER REFERENCES membre(id)
+);
+
+CREATE TABLE fonctionnalite (
+  id SERIAL PRIMARY KEY,
+  description TEXT NOT NULL,
+  priorite INTEGER,
+  id_stb INTEGER REFERENCES stb(id)
+);
+
+CREATE TABLE exigence (
+  id SERIAL PRIMARY KEY,
+  nom TEXT NOT NULL,
+  description TEXT NOT NULL,
+  priorite INTEGER,
+  id_fonc INTEGER REFERENCES fonctionnalite(id)
+);

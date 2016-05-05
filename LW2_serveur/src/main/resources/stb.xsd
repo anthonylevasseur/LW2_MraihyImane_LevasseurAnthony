@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://univ.fr/stb" xmlns="http://univ.fr/stb">
+	
+	<xs:element name="stb" type="stbType"/>
+	
+	<xs:complexType name="stbType">
+		<xs:sequence>
+			<xs:element name="titre" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="version" minOccurs="1" maxOccurs="1" type="xs:double"/>
+			<xs:element name="date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="description" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="client" type="clientType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="equipe" type="equipeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fonctionnalite" type="fonctionnaliteType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="commentaire" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="clientType">
+		<xs:sequence>
+			<xs:element name="entite"/>
+			<xs:element name="contact" type="contactType"/>
+			<xs:element name="adresse" type="adresseType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="adresseType">
+		<xs:sequence>
+			<xs:element name="num" type="xs:int"/>
+			<xs:element name="rue"/>
+			<xs:element name="ville"/>
+			<xs:element name="code" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="equipeType">
+		<xs:sequence>
+			<xs:element name="contact" type="contactType" minOccurs="2" maxOccurs="7"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="contactType">
+		<xs:sequence>
+			<xs:element name="nom"/>
+			<xs:element name="prenom"/>
+			<xs:element name="gender" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="fonctionnaliteType">
+		<xs:sequence>
+			<xs:element name="description" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="exigence" type="exigenceType" minOccurs="2" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="prio">
+			<xs:simpleType>
+			    <xs:restriction base="xs:integer">
+			      <xs:minInclusive value="1"/>
+			      <xs:maxInclusive value="10"/>
+			      </xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="exigenceType">
+		<xs:sequence>
+			<xs:element name="identifiant"/>
+			<xs:element name="priorite" minOccurs="1" maxOccurs="1">
+				<xs:simpleType>
+				    <xs:restriction base="xs:integer">
+				      <xs:minInclusive value="1"/>
+				      <xs:maxInclusive value="10"/>
+				      </xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="description"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema> 

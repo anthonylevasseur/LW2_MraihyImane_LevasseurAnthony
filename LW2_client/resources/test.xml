@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:stb xmlns:p="http://univ.fr/stb">
+  <titre>STB UPIX</titre>
+  <version>3.2</version>
+  <date>02/05/2016</date>
+  <description>Ceci est le document de specification technique des besoins du projet UPIX 2016.</description>
+  <client>
+    <entite>N/C</entite>
+    <contact>
+      <nom>Bourotte</nom>
+      <prenom>Rodolphe</prenom>
+      <gender>true</gender>
+    </contact>
+    <adresse>
+      <num>3</num>
+      <rue>rue Lafayette</rue>
+      <ville>Rouen</ville>
+      <code>76000</code>
+    </adresse>
+  </client>
+  <equipe>
+    <contact>
+      <nom>Decamps</nom>
+      <prenom>Renan</prenom>
+      <gender>true</gender>
+    </contact>
+    <contact>
+      <nom>Lecomte</nom>
+      <prenom>Hugo</prenom>
+      <gender>true</gender>
+    </contact>
+    <contact>
+      <nom>Leneveu</nom>
+      <prenom>Lucie</prenom>
+      <gender>false</gender>
+    </contact>
+    <contact>
+      <nom>Levasseur</nom>
+      <prenom>Anthony</prenom>
+      <gender>true</gender>
+    </contact>
+    <contact>
+      <nom>Martin</nom>
+      <prenom>Simon</prenom>
+      <gender>true</gender>
+    </contact>
+    <contact>
+      <nom>Mraihy</nom>
+      <prenom>Imane</prenom>
+      <gender>false</gender>
+    </contact>
+    <contact>
+      <nom>Yassine</nom>
+      <prenom>Nizar</prenom>
+      <gender>true</gender>
+    </contact>
+  </equipe>
+  <fonctionnalite prio="2">
+    <description>Dessiner un arc</description>
+    <exigence>
+      <identifiant>E11</identifiant>
+      <priorite>3</priorite>
+      <description>Ne pas sortir de la page</description>
+    </exigence>
+    <exigence>
+      <identifiant>E12</identifiant>
+      <priorite>7</priorite>
+      <description>Avoir presse le bouton de dessin manuel</description>
+    </exigence>
+  </fonctionnalite>
+  <fonctionnalite prio="3">
+    <description>Lecture en temps reel</description>
+    <exigence>
+      <identifiant>E21</identifiant>
+      <priorite>1</priorite>
+      <description>Avoir au minimum un arc</description>
+    </exigence>
+    <exigence>
+      <identifiant>E22</identifiant>
+      <priorite>6</priorite>
+      <description>Avoir presse le bouton play</description>
+    </exigence>
+  </fonctionnalite>
+</p:stb>
+
